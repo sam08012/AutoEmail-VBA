@@ -1,0 +1,36 @@
+'selelct Microsot object libraray16.0 reference, from tools in VBA editor as it allows for early-binding of object variables, enables intellisense
+ 
+Sub AutoMail()
+      Dim OutApp As Object, OutMail As Object, lastRow As Integer, r As Integer
+      Dim bodyHeader As String, bodyMain As String, bodySignature As String
+      Set OutApp = CreateObject("Outlook.Application")
+ 
+      'change as per your row length
+      lastRow = 50
+      
+      bodySignature = "Yours Sincerely," & vbLf & "Samriddh Kumar Singh"
+      
+     'loop: adjust range accordingly
+      For r = 2 To lastRow
+          Set OutMail = OutApp.CreateItem(0)
+          With OutMail
+          'assuming "E" column contains all emailid and G2 cell cotains the subject
+              .To = Range("E" & r).Value
+              .Subject = Range("G2").Value
+          'for sending diferent subject to each email -> .Subject = Range("G" & r).Value
+               
+               
+              'email body with various components
+              bodyHeader = "Dear " & Range("B" & r).Value & ","
+              bodyMain = Range("H2").Value
+              .Body = bodyHeader & vbLf & vbLf & bodyMain & vbLf & vbLf & bodySignature
+               
+               'I2: file attachment cell :  add local path to your file in this
+              .Attachments.Add Range("I2").Value
+              .Display 'optional
+              '.Send 'uncomment to send
+          End With
+      Next r
+      Set OutMail = Nothing
+      Set OutApp = Nothing
+  End Sub
