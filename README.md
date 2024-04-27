@@ -41,15 +41,17 @@ This guide will help you set up a VBA/macro-based solution in Excel to send mult
    - Ensure that the code is fetching data from the correct columns in your Excel sheet.
 
 6. **Assign Macro to Button**
-   - In Excel, insert a button using the provided Excel sheet or create a new one if yiu don't like mine.
-   - Assign the macro you created to the button by right-clicking on it, selecting `Assign Macro`, and choosing the macro from the list.
-![Alt Text](image_url)
+   - In Excel, we can insert a button using the provided Excel sheet. Use the already provided one or create a new one if you don't like mine.
+   - To Assign the macro you created to the button. Right-click on it, select `Assign Macro`, and choosing the macro from the list.
+
+    ![Assigned macro to "Hire me" button ](https://github.com/sam08012/AutoEmail-VBA/blob/main/Screenshot%202024-04-27%20162135.png)
+
 7. **Test the Solution**
    - Save your Excel sheet with the macro-enabled format (`.xlsm`).
    - Fill in the necessary data in your Excel sheet.
    - Click on the "Hire Me" button to trigger the macro.
    - Verify that the emails are sent correctly from your Outlook client.
-![Alt Text](image_url)
+   ![Testing mails](https://github.com/sam08012/AutoEmail-VBA/blob/main/Screenshot%202024-04-27%20162228.png)
 
 8. **Customize Further (Optional)**
    - If needed, customize the VBA code to add more functionalities, error handling, or enhancements to suit your requirements.
